@@ -1,3 +1,3 @@
-module github.com/jainparan/backend-server
+module github.com/jainparan/application-server
 
 go 1.19

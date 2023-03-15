@@ -5,13 +5,11 @@ import (
 	"net/http"
 )
 
-func StartServer() error {
-	http.HandleFunc("/", HelloServer)
+func Server() {
+	http.HandleFunc("/", handle)
 	http.ListenAndServe(":8080", nil)
-
-	return nil
 }
 
-func HelloServer(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "Hello, %s!", r.URL.Path[1:])
+func handle(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprintf(w, "Executing /%s!", r.URL.Path[1:])
 }
